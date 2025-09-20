@@ -9,7 +9,6 @@ import {
 import { Link } from 'next-view-transitions';
 import { useState } from 'react';
 
-import { LocaleSwitcher } from '../locale-switcher';
 import { NavbarItem } from './navbar-item';
 import { Button } from '@/components/elements/button';
 import { Logo } from '@/components/logo';
@@ -87,22 +86,7 @@ export const DesktopNavbar = ({
           ))}
         </div>
       </div>
-      <div className="flex space-x-2 items-center">
-        <LocaleSwitcher currentLocale={locale} />
 
-        {rightNavbarItems.map((item, index) => (
-          <Button
-            key={item.text}
-            variant={
-              index === rightNavbarItems.length - 1 ? 'primary' : 'simple'
-            }
-            as={Link}
-            href={`/${locale}${item.URL}`}
-          >
-            {item.text}
-          </Button>
-        ))}
-      </div>
     </motion.div>
   );
 };

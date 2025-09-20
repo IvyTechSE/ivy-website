@@ -4,9 +4,6 @@ import { useMotionValueEvent, useScroll } from 'framer-motion';
 import { Link } from 'next-view-transitions';
 import { useState } from 'react';
 import { IoIosMenu } from 'react-icons/io';
-import { IoIosClose } from 'react-icons/io';
-
-import { LocaleSwitcher } from '../locale-switcher';
 import { Button } from '@/components/elements/button';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
@@ -63,16 +60,7 @@ export const MobileNavbar = ({
 
       {open && (
         <div className="fixed inset-0 bg-black z-50 flex flex-col items-start justify-start space-y-10  pt-5  text-xl text-zinc-600  transition duration-200 hover:text-zinc-800">
-          <div className="flex items-center justify-between w-full px-5">
-            <Logo locale={locale} image={logo?.image} />
-            <div className="flex items-center space-x-2">
-              <LocaleSwitcher currentLocale={locale} />
-              <IoIosClose
-                className="h-8 w-8 text-white"
-                onClick={() => setOpen(!open)}
-              />
-            </div>
-          </div>
+
           <div className="flex flex-col items-start justify-start gap-[14px] px-8">
             {leftNavbarItems.map((navItem: any, idx: number) => (
               <>
