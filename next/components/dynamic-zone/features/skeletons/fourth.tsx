@@ -4,8 +4,6 @@ import { motion } from 'framer-motion';
 import React, { useEffect, useMemo, useState } from 'react';
 
 import { IconContainer } from '../icon-container';
-import ShootingStars from '@/components/decorations/shooting-star';
-import StarBackground from '@/components/decorations/star-background';
 import {
   FacebookIcon,
   InstagramIcon,
@@ -106,8 +104,6 @@ export const SkeletonFour = () => {
 
   return (
     <div className="p-8 overflow-hidden h-full relative flex flex-col group [perspective:8000px] [transform-style:preserve-3d]">
-      <StarBackground />
-      <ShootingStars />
 
       {icons.map((icon) => (
         <IconContainer

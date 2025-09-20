@@ -43,7 +43,7 @@ export const SkeletonThree = () => {
       <div className="flex flex-col gap-4 items-center justify-center h-full relative">
         <div className="message z-40 absolute left-10 top-10 rounded-full px-4 py-2 shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)_inset]">
           <p className="text-xs">
-            <Cover>+8,008</Cover> launched
+            +8,008 launched
           </p>
         </div>
         <div className="p-8 relative">

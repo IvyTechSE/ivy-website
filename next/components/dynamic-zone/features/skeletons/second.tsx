@@ -60,15 +60,15 @@ export const SkeletonTwo = () => {
         className="absolute inset-0 flex flex-col group p-8 z-40"
       >
         <Container className="mt-10 ml-4">
-          <Cover>2,052</Cover>
+          2,052
           satellite
         </Container>
         <Container className="mt-4 ml-10 group-hover:border-secondary transition duration-200 group-hover:scale-[1.02]">
-          <Cover>8,230,002</Cover>
+          8,230,002
           Starlinks
         </Container>
         <Container className="mt-4 ml-4">
-          <Cover>7,224</Cover>
+          7,224
           rockets
         </Container>
         <Cursor

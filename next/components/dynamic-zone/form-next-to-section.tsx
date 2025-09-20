@@ -8,8 +8,6 @@ import {
 import Link from 'next/link';
 
 import { Button } from '../elements/button';
-import ShootingStars from '@/components/decorations/shooting-star';
-import StarBackground from '@/components/decorations/star-background';
 import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 
 export function FormNextToSection({
@@ -113,8 +111,6 @@ export function FormNextToSection({
         </div>
       </div>
       <div className="relative w-full z-20 hidden md:flex border-l border-charcoal overflow-hidden bg-neutral-900 items-center justify-center">
-        <StarBackground />
-        <ShootingStars />
         <div className="max-w-sm mx-auto">
           <div className="flex flex-row items-center justify-center mb-10 w-full">
             <AnimatedTooltip items={section.users} />
