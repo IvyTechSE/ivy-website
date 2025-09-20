@@ -3,7 +3,6 @@
 import React from 'react';
 import { TbLocationBolt } from 'react-icons/tb';
 
-import { AmbientColor } from '../../decorations/ambient-color';
 import { Heading } from '../../elements/heading';
 import { Subheading } from '../../elements/subheading';
 import { FeatureIconContainer } from '../features/feature-icon-container';
@@ -21,7 +20,6 @@ export const Testimonials = ({
 }) => {
   return (
     <div className="relative">
-      <AmbientColor />
       <div className="pb-20">
         <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
           <TbLocationBolt className="h-6 w-6 text-white" />

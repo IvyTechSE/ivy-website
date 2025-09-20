@@ -5,7 +5,6 @@ import Link from 'next/link';
 import React from 'react';
 
 import { Container } from '../container';
-import { AmbientColor } from '../decorations/ambient-color';
 import { Button } from '../elements/button';
 
 export const CTA = ({
@@ -21,7 +20,6 @@ export const CTA = ({
 }) => {
   return (
     <div className="relative py-40">
-      <AmbientColor />
       <Container className="flex flex-col md:flex-row justify-between items-center w-full px-8">
         <div className="flex flex-col">
           <motion.h2 className="text-white text-xl text-center md:text-left md:text-3xl font-bold mx-auto md:mx-0 max-w-xl ">

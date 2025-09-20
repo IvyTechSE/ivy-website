@@ -5,7 +5,6 @@ import ClientSlugHandler from '../ClientSlugHandler';
 import { BlogCard } from '@/components/blog-card';
 import { BlogPostRows } from '@/components/blog-post-rows';
 import { Container } from '@/components/container';
-import { AmbientColor } from '@/components/decorations/ambient-color';
 import { FeatureIconContainer } from '@/components/dynamic-zone/features/feature-icon-container';
 import { Heading } from '@/components/elements/heading';
 import { Subheading } from '@/components/elements/subheading';
@@ -61,7 +60,6 @@ export default async function Blog(props: {
   return (
     <div className="relative overflow-hidden py-20 md:py-0">
       <ClientSlugHandler localizedSlugs={localizedSlugs} />
-      <AmbientColor />
       <Container className="flex flex-col items-center justify-between pb-20">
         <div className="relative z-20 py-10 md:pt-40">
           <FeatureIconContainer className="flex justify-center items-center overflow-hidden">

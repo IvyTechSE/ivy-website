@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import { Container } from '@/components/container';
-import { AmbientColor } from '@/components/decorations/ambient-color';
 import DynamicZoneManager from '@/components/dynamic-zone/manager';
 import { SingleProduct } from '@/components/products/single-product';
 import { generateMetadataObject } from '@/lib/shared/metadata';
@@ -46,7 +45,6 @@ export default async function SingleProductPage(props: {
 
   return (
     <div className="relative overflow-hidden w-full">
-      <AmbientColor />
       <Container className="py-20 md:py-40">
         <SingleProduct product={product} />
         {product?.dynamic_zone && (

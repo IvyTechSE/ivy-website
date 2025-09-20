@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 
 import ClientSlugHandler from '../ClientSlugHandler';
 import { Container } from '@/components/container';
-import { AmbientColor } from '@/components/decorations/ambient-color';
 import { FeatureIconContainer } from '@/components/dynamic-zone/features/feature-icon-container';
 import { Heading } from '@/components/elements/heading';
 import { Subheading } from '@/components/elements/subheading';
@@ -63,7 +62,6 @@ export default async function Products(props: {
   return (
     <div className="relative overflow-hidden w-full">
       <ClientSlugHandler localizedSlugs={localizedSlugs} />
-      <AmbientColor />
       <Container className="pt-40 pb-40">
         <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
           <IconShoppingCartUp className="h-6 w-6 text-white" />
