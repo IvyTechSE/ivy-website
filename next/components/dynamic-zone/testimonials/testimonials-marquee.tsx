@@ -1,8 +1,6 @@
 'use client';
 
-import Image from 'next/image';
 import React from 'react';
-import Marquee from 'react-fast-marquee';
 
 import { StrapiImage } from '@/components/ui/strapi-image';
 import { cn } from '@/lib/utils';
@@ -16,67 +14,34 @@ export const TestimonialsMarquee = ({
   const levelTwo = testimonials.slice(8, 16);
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="flex h-full relative">
-        <div className="h-full absolute w-20 left-0 inset-y-0 z-30 bg-gradient-to-r from-charcoal to-transparent" />
-        <div className="h-full absolute w-20 right-0 inset-y-0 z-30 bg-gradient-to-l from-charcoal to-transparent" />
-        <Marquee>
-          {levelOne.map((testimonial: any, index: any) => (
-            <Card
-              key={`testimonial-${testimonial.id}-${index}`}
-              className="max-w-xl h-60 mx-4"
-            >
-              <Quote>{testimonial?.text}</Quote>
-              <div className="flex gap-2 items-center mt-8">
-                <StrapiImage
-                  src={testimonial?.user?.image?.url}
-                  alt={`${testimonial.user.firstname} ${testimonial.user.lastname}`}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <div className="flex flex-col">
-                  <QuoteDescription className="text-neutral-300">
-                    {`${testimonial.user.firstname} ${testimonial.user.lastname}`}
-                  </QuoteDescription>
-                  <QuoteDescription className="text-neutral-400">
-                    {testimonial.user.job}
-                  </QuoteDescription>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </Marquee>
-      </div>
       <div className="flex h-full relative mt-8">
         <div className="h-full absolute w-20 left-0 inset-y-0 z-30 bg-gradient-to-r from-charcoal to-transparent" />
         <div className="h-full absolute w-20 right-0 inset-y-0 z-30 bg-gradient-to-l from-charcoal to-transparent" />
-        <Marquee direction="right" speed={20}>
-          {levelTwo.map((testimonial: any, index: any) => (
-            <Card
-              key={`testimonial-${testimonial.id}-${index}`}
-              className="max-w-xl h-60 mx-4"
-            >
-              <Quote>{testimonial.text}</Quote>
-              <div className="flex gap-2 items-center mt-8">
-                <StrapiImage
-                  src={testimonial?.user?.image?.url}
-                  alt={`${testimonial.user.firstname} ${testimonial.user.lastname}`}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <div className="flex flex-col">
-                  <QuoteDescription className="text-neutral-300">
-                    {`${testimonial.user.firstname} ${testimonial.user.lastname}`}
-                  </QuoteDescription>
-                  <QuoteDescription className="text-neutral-400">
-                    {testimonial.user.job}
-                  </QuoteDescription>
-                </div>
+        {levelTwo.map((testimonial: any, index: any) => (
+          <Card
+            key={`testimonial-${testimonial.id}-${index}`}
+            className="max-w-xl h-60 mx-4"
+          >
+            <Quote>{testimonial.text}</Quote>
+            <div className="flex gap-2 items-center mt-8">
+              <StrapiImage
+                src={testimonial?.user?.image?.url}
+                alt={`${testimonial.user.firstname} ${testimonial.user.lastname}`}
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+              <div className="flex flex-col">
+                <QuoteDescription className="text-neutral-300">
+                  {`${testimonial.user.firstname} ${testimonial.user.lastname}`}
+                </QuoteDescription>
+                <QuoteDescription className="text-neutral-400">
+                  {testimonial.user.job}
+                </QuoteDescription>
               </div>
-            </Card>
-          ))}
-        </Marquee>
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   );
