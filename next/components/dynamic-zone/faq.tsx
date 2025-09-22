@@ -17,7 +17,7 @@ export const FAQ = ({
     <Container className="flex flex-col items-center justify-between pb-20">
       <div className="relative z-20 py-10 md:pt-40">
         <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
-          <IconHelpHexagonFilled className="h-6 w-6 text-white" />
+          <IconHelpHexagonFilled className="h-6 w-6" />
         </FeatureIconContainer>
         <Heading as="h1" className="mt-4">
           {heading}
@@ -27,10 +27,10 @@ export const FAQ = ({
         {faqs &&
           faqs.map((faq: { question: string; answer: string }) => (
             <div key={faq.question}>
-              <h4 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
+              <h4 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b">
                 {faq.question}
               </h4>
-              <p className="mt-4 text-neutral-400">{faq.answer}</p>
+              <p className="mt-4">{faq.answer}</p>
             </div>
           ))}
       </div>

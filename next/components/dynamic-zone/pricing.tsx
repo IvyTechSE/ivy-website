@@ -3,6 +3,8 @@
 import { IconCheck, IconPlus, IconReceipt2 } from '@tabler/icons-react';
 import React from 'react';
 
+
+
 import { Container } from '../container';
 import { Button } from '../elements/button';
 import { Heading } from '../elements/heading';
@@ -45,7 +47,7 @@ export const Pricing = ({
     <div className="pt-40">
       <Container>
         <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
-          <IconReceipt2 className="h-6 w-6 text-white" />
+          <IconReceipt2 className="h-6 w-6" />
         </FeatureIconContainer>
         <Heading className="pt-4">{heading}</Heading>
         <Subheading className="max-w-3xl mx-auto">{sub_heading}</Subheading>
@@ -70,13 +72,11 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
       <div
         className={cn(
           'p-4 bg-neutral-800 rounded-2xl shadow-[0px_-1px_0px_0px_var(--neutral-700)]',
-          plan.featured && 'bg-white shadow-aceternity'
+          plan.featured && 'shadow-aceternity'
         )}
       >
         <div className="flex justify-between items-center">
-          <p className={cn('font-medium', plan.featured && 'text-black')}>
-            {plan.name}
-          </p>
+          <p className={cn('font-medium')}>{plan.name}</p>
           {plan.featured && (
             <div
               className={cn(
@@ -99,9 +99,7 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
               $
             </span>
           )}
-          <span
-            className={cn('text-4xl font-bold', plan.featured && 'text-black')}
-          >
+          <span className={cn('text-4xl font-bold')}>
             {plan.price || plan?.CTA?.text}
           </span>
           {plan.price && (
@@ -117,11 +115,7 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
         </div>
         <Button
           variant="outline"
-          className={cn(
-            'w-full mt-10 mb-4',
-            plan.featured &&
-              'bg-black text-white hover:bg-black/80 hover:text-white'
-          )}
+          className={cn('w-full mt-10 mb-4')}
           onClick={onClick}
         >
           {plan?.CTA?.text}
@@ -167,14 +161,7 @@ const Step = ({
       >
         <IconCheck className="h-3 w-3 [stroke-width:4px] text-neutral-300" />
       </div>
-      <div
-        className={cn(
-          'font-medium text-white text-sm',
-          featured && 'text-black'
-        )}
-      >
-        {children}
-      </div>
+      <div className={cn('font-medium text-sm')}>{children}</div>
     </div>
   );
 };
@@ -182,9 +169,7 @@ const Step = ({
 const Divider = ({ featured }: { featured?: boolean }) => {
   return (
     <div className="relative">
-      <div
-        className={cn('w-full h-px bg-neutral-950', featured && 'bg-white')}
-      />
+      <div className={cn('w-full h-px bg-neutral-950')} />
       <div
         className={cn(
           'w-full h-px bg-neutral-800',
@@ -194,14 +179,11 @@ const Divider = ({ featured }: { featured?: boolean }) => {
       <div
         className={cn(
           'absolute inset-0 h-5 w-5 m-auto rounded-xl bg-neutral-800 shadow-[0px_-1px_0px_0px_var(--neutral-700)] flex items-center justify-center',
-          featured && 'bg-white shadow-aceternity'
+          featured && 'shadow-aceternity'
         )}
       >
         <IconPlus
-          className={cn(
-            'h-3 w-3 [stroke-width:4px] text-neutral-300',
-            featured && 'text-black'
-          )}
+          className={cn('h-3 w-3 [stroke-width:4px] text-neutral-300')}
         />
       </div>
     </div>

@@ -22,7 +22,7 @@ export const CTA = ({
     <div className="relative py-40">
       <Container className="flex flex-col md:flex-row justify-between items-center w-full px-8">
         <div className="flex flex-col">
-          <motion.h2 className="text-white text-xl text-center md:text-left md:text-3xl font-bold mx-auto md:mx-0 max-w-xl ">
+          <motion.h2 className="text-xl text-center md:text-left md:text-3xl font-bold mx-auto md:mx-0 max-w-xl ">
             {heading}
           </motion.h2>
           <p className="max-w-md mt-8 text-center md:text-left text-sm md:text-base mx-auto md:mx-0 text-neutral-400">

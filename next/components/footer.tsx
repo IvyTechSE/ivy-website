@@ -22,40 +22,40 @@ export const Footer = async ({
             <div className="mt-4">{data?.copyright}</div>
             <div className="mt-10">
               Designed and Developed by{' '}
-              <a className="text-white underline" href="https://aceternity.com">
+              <a className="underline" href="https://aceternity.com">
                 Aceternity
               </a>{' '}
               &{' '}
-              <a className="text-white underline" href="https://strapi.io">
+              <a className="underline" href="https://strapi.io">
                 Strapi
               </a>
             </div>
             <div className="mt-2">
               built with{' '}
-              <a className="text-white underline" href="https://strapi.io">
+              <a className="underline" href="https://strapi.io">
                 Strapi
               </a>
               ,{' '}
-              <a className="text-white underline" href="https://nextjs.org">
+              <a className="underline" href="https://nextjs.org">
                 Next.js
               </a>
               ,{' '}
               <a
-                className="text-white underline"
+                className="underline"
                 href="https://tailwindcss.com"
               >
                 Tailwind CSS
               </a>
               ,{' '}
               <a
-                className="text-white underline"
+                className="underline"
                 href="https://framer.com/motion"
               >
                 Motion Animation Lib
               </a>
               , and{' '}
               <a
-                className="text-white underline"
+                className="underline"
                 href="https://ui.aceternity.com"
               >
                 Aceternity UI

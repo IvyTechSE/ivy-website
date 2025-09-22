@@ -5,8 +5,14 @@ import FuzzySearch from 'fuzzy-search';
 import { Link } from 'next-view-transitions';
 import React, { useEffect, useState } from 'react';
 
+
+
 import { truncate } from '@/lib/utils';
 import { Article } from '@/types/types';
+
+
+
+
 
 export const BlogPostRows = ({ articles }: { articles: Article[] }) => {
   const [search, setSearch] = useState('');
@@ -25,7 +31,7 @@ export const BlogPostRows = ({ articles }: { articles: Article[] }) => {
   return (
     <div className="w-full py-20">
       <div className="flex sm:flex-row flex-col justify-between gap-4 items-center mb-10">
-        <p className="text-2xl font-bold text-white">More Posts</p>
+        <p className="text-2xl font-bold">More Posts</p>
         <input
           type="text"
           value={search}
@@ -56,15 +62,15 @@ export const BlogPostRow = ({ article }: { article: Article }) => {
       className="flex md:flex-row flex-col items-start justify-between md:items-center group py-4"
     >
       <div>
-        <p className="text-neutral-300 text-lg font-medium group-hover:text-white transition duration-200">
+        <p className="text-neutral-300 text-lg font-medium transition duration-200">
           {article.title}
         </p>
-        <p className="text-neutral-300 text-sm mt-2 max-w-xl group-hover:text-white transition duration-200">
+        <p className="text-neutral-300 text-sm mt-2 max-w-xl transition duration-200">
           {truncate(article.description, 80)}
         </p>
 
         <div className="flex gap-2 items-center my-4">
-          <p className="text-neutral-300 text-sm  max-w-xl group-hover:text-white transition duration-200">
+          <p className="text-neutral-300 text-sm  max-w-xl transition duration-200">
             {format(new Date(article.publishedAt), 'MMMM dd, yyyy')}
           </p>
           <div className="h-1 w-1 rounded-full bg-neutral-800"></div>
