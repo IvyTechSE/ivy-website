@@ -7,7 +7,7 @@ export default function PageContent({ pageData }: { pageData: any }) {
       {dynamicZone && (
         <DynamicZoneManager
           dynamicZone={dynamicZone}
-          locale={pageData.locale}
+          locale={pageData?.locale}
         />
       )}
     </div>
