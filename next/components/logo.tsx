@@ -20,7 +20,7 @@ export const Logo = ({ image, locale }: { image?: Image; locale?: string }) => {
           className="h-10 w-10 rounded-xl mr-2"
         />
 
-        <span className="font-bold">LaunchPad</span>
+        <span className="font-bold">Ivy Technology</span>
       </Link>
     );
   }
