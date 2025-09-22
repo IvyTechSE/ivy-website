@@ -3,7 +3,8 @@
 import { Transition } from '@headlessui/react';
 import { memo, useEffect, useRef, useState } from 'react';
 
-import { SparklesCore } from '../../ui/sparkles';
+
+
 import { StrapiImage } from '@/components/ui/strapi-image';
 import { cn } from '@/lib/utils';
 
@@ -49,19 +50,6 @@ export const TestimonialsSlider = ({ testimonials }: { testimonials: any }) => {
     <section>
       <div className="max-w-3xl mx-auto  relative z-30 h-80">
         <div className="relative pb-12 md:pb-20">
-          {/* Particles animation */}
-          <div className="absolute left-1/2 -translate-x-1/2 -top-2 -z-10 w-80 h-20 -mt-6">
-            <MemoizedSparklesCore
-              id="new-particles"
-              background="transparent"
-              minSize={0.4}
-              maxSize={1}
-              particleDensity={100}
-              className="w-full h-full"
-              particleColor="#FFFFFF"
-            />
-          </div>
-
           {/* Carousel */}
           <div className="text-center">
             {/* Testimonial image */}
@@ -152,5 +140,3 @@ export const TestimonialsSlider = ({ testimonials }: { testimonials: any }) => {
     </section>
   );
 };
-
-const MemoizedSparklesCore = memo(SparklesCore);

@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useCallback, useId, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 
-import { SparklesCore } from '@/components/ui/sparkles';
 import { cn } from '@/lib/utils';
 
 export const SkeletonTwo = () => {
@@ -41,16 +40,6 @@ export const SkeletonTwo = () => {
       >
         <div className="w-36 h-full [mask-image:radial-gradient(100px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-indigo-400 via-transparent to-transparent z-20 opacity-50" />
         <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-cyan-400 via-transparent to-transparent z-10 opacity-100 blur-lg" />
-        <div className="w-10 h-3/4 top-1/2 -translate-y-1/2 absolute -right-10 [mask-image:radial-gradient(100px_at_left,white,transparent)]">
-          <MemoizedSparklesCore
-            background="transparent"
-            minSize={0.4}
-            maxSize={1}
-            particleDensity={1200}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-        </div>
       </div>
       <BackgroundLines />
       <div
@@ -59,18 +48,11 @@ export const SkeletonTwo = () => {
         }}
         className="absolute inset-0 flex flex-col group p-8 z-40"
       >
-        <Container className="mt-10 ml-4">
-          2,052
-          satellite
-        </Container>
+        <Container className="mt-10 ml-4">2,052 satellite</Container>
         <Container className="mt-4 ml-10 group-hover:border-secondary transition duration-200 group-hover:scale-[1.02]">
-          8,230,002
-          Starlinks
+          8,230,002 Starlinks
         </Container>
-        <Container className="mt-4 ml-4">
-          7,224
-          rockets
-        </Container>
+        <Container className="mt-4 ml-4">7,224 rockets</Container>
         <Cursor
           className="top-40 left-0 group-hover:left-40 group-hover:top-20"
           textClassName="group-hover:text-secondary"
@@ -267,5 +249,3 @@ const CircleWithLine = ({
     </div>
   );
 };
-
-const MemoizedSparklesCore = React.memo(SparklesCore);
