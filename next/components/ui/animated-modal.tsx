@@ -1,17 +1,16 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import React, {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
+
+
 
 import { Button } from '../elements/button';
 import { cn } from '@/lib/utils';
+
+
+
+
 
 interface ModalContextType {
   open: boolean;
@@ -108,7 +107,7 @@ export const ModalBody = ({
           <motion.div
             ref={modalRef}
             className={cn(
-              'min-h-[50%] max-h-[90%] md:max-w-[40%] bg-white  border border-transparent md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden',
+              'min-h-[50%] max-h-[90%] md:max-w-[40%] border border-transparent md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden',
               className
             )}
             initial={{
@@ -207,7 +206,7 @@ const CloseIcon = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-black  h-4 w-4 group-hover:scale-125 group-hover:rotate-3 transition duration-200"
+        className="h-4 w-4 group-hover:scale-125 group-hover:rotate-3 transition duration-200"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />

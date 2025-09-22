@@ -66,7 +66,7 @@ export const DesktopNavbar = ({
             transition={{
               duration: 1,
             }}
-            className="absolute inset-0 h-full w-full bg-neutral-900 pointer-events-none [mask-image:linear-gradient(to_bottom,white,transparent,white)] rounded-full"
+            className="absolute inset-0 h-full w-full bg-neutral-900 pointer-events-none rounded-full"
           />
         )}
       </AnimatePresence>

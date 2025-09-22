@@ -23,7 +23,7 @@ export function FormNextToSection({
       <div className="flex relative z-20 items-center w-full justify-center px-4 py-4 lg:py-40 sm:px-6 lg:flex-none lg:px-20  xl:px-24">
         <div className="mx-auto w-full max-w-md">
           <div>
-            <h1 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-white">
+            <h1 className="mt-8 text-2xl font-bold leading-9 tracking-tight ">
               {heading}
             </h1>
             <p className="mt-4 text-muted   text-sm max-w-sm">{sub_heading}</p>
