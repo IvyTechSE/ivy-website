@@ -13,12 +13,6 @@
     "sub_heading": {
       "type": "string"
     },
-    "globe_card": {
-      "displayName": "Globe",
-      "type": "component",
-      "repeatable": false,
-      "component": "cards.globe-card"
-    },
     "ray_card": {
       "displayName": "Ray",
       "type": "component",

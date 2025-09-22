@@ -3,47 +3,16 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
 
-import { IconContainer } from '../icon-container';
-import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  MetaIcon,
-  SlackIcon,
-  TiktokIcon,
-  TwitterIcon,
-} from '@/components/icons/illustrations';
 
-const World = dynamic(
-  () => import('@/components/ui/globe').then((m) => m.World),
-  {
-    ssr: false,
-  }
-);
+
+import { IconContainer } from '../icon-container';
+import { FacebookIcon, InstagramIcon, LinkedInIcon, MetaIcon, SlackIcon, TiktokIcon, TwitterIcon } from '@/components/icons/illustrations';
+
+
+
+
 
 export function SkeletonOne() {
-  const globeConfig = {
-    pointSize: 4,
-    globeColor: '#09090b',
-    showAtmosphere: true,
-    atmosphereColor: '#e2e8f0',
-    atmosphereAltitude: 0.1,
-    emissive: '#062056',
-    emissiveIntensity: 0.1,
-    shininess: 0.9,
-    polygonColor: 'rgba(255,255,255,1)',
-    ambientLight: '#38bdf8',
-    directionalLeftLight: '#ffffff',
-    directionalTopLight: '#ffffff',
-    pointLight: '#ffffff',
-    arcTime: 1000,
-    arcLength: 0.9,
-    rings: 1,
-    maxRings: 3,
-    initialPosition: { lat: 22.3193, lng: 114.1694 },
-    autoRotate: true,
-    autoRotateSpeed: 0.5,
-  };
   const colors = ['#d4d4d4', '#d4d4d4', '#d4d4d4'];
   const sampleArcs = [
     {
@@ -460,9 +429,6 @@ export function SkeletonOne() {
             <FacebookIcon />
           </IconContainer>
         </div>
-      </div>
-      <div className="h-[300px] w-[300px] md:w-[600px] md:h-[600px] mx-auto absolute -bottom-20 md:-bottom-60 z-20 inset-x-0">
-        <World data={sampleArcs} globeConfig={globeConfig} />
       </div>
     </div>
   );

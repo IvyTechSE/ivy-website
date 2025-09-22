@@ -19,9 +19,6 @@
     "@strapi/blocks-react-renderer": "^1.0.1",
     "@tabler/icons-react": "^3.11.0",
     "@tailwindcss/typography": "^0.5.13",
-    "@tsparticles/engine": "^3.5.0",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.5.0",
     "@types/fuzzy-search": "^2.1.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -40,9 +37,7 @@
     "react-wrap-balancer": "^1.1.1",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7",
-    "three": "^0.168.0",
-    "three-globe": "^2.31.1"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/negotiator": "^0.6.3",

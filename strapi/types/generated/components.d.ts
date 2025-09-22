@@ -1,19 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface CardsGlobeCard extends Struct.ComponentSchema {
-  collectionName: 'components_cards_globe_cards';
-  info: {
-    description: '';
-    displayName: 'Globe_Card';
-    icon: 'dashboard';
-  };
-  attributes: {
-    description: Schema.Attribute.String;
-    span: Schema.Attribute.Enumeration<['one', 'two', 'three']>;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface CardsGraphCard extends Struct.ComponentSchema {
   collectionName: 'components_cards_graph_cards';
   info: {
@@ -110,7 +96,6 @@ export interface DynamicZoneFeatures extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    globe_card: Schema.Attribute.Component<'cards.globe-card', false>;
     graph_card: Schema.Attribute.Component<'cards.graph-card', false>;
     heading: Schema.Attribute.String;
     ray_card: Schema.Attribute.Component<'cards.ray-card', false>;
@@ -495,7 +480,6 @@ export interface SharedUser extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'cards.globe-card': CardsGlobeCard;
       'cards.graph-card': CardsGraphCard;
       'cards.ray-card': CardsRayCard;
       'cards.social-media-card': CardsSocialMediaCard;
