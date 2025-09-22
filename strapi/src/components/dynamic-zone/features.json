@@ -13,23 +13,23 @@
     "sub_heading": {
       "type": "string"
     },
-    "ray_card": {
-      "displayName": "Ray",
+    "image_card1": {
+      "displayName": "Feature One",
       "type": "component",
       "repeatable": false,
-      "component": "cards.ray-card"
+      "component": "cards.image-card"
     },
-    "graph_card": {
-      "displayName": "Graph",
+    "image_card2": {
+      "displayName": "Feature Two",
       "type": "component",
       "repeatable": false,
-      "component": "cards.graph-card"
+      "component": "cards.image-card"
     },
-    "social_media_card": {
-      "displayName": "Graph",
+    "image_card3": {
+      "displayName": "Feature Three",
       "type": "component",
       "repeatable": false,
-      "component": "cards.social-media-card"
+      "component": "cards.image-card"
     }
   }
 }

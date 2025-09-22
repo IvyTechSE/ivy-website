@@ -1,22 +1,25 @@
 {
-  "collectionName": "components_cards_social_media_cards",
+  "collectionName": "components_cards_image_cards",
   "info": {
-    "displayName": "Social_Media_Card",
+    "displayName": "Image_Card",
     "icon": "dashboard",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "string"
     },
-    "logos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::logo.logo"
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "span": {
       "type": "enumeration",

@@ -7,16 +7,9 @@ import { Container } from '../../container';
 import { Heading } from '../../elements/heading';
 import { Subheading } from '../../elements/subheading';
 import { GradientContainer } from '../../gradient-container';
-import { Card, CardDescription, CardSkeletonContainer, CardTitle } from './card';
+import { Card, CardDescription, CardTitle } from './card';
 import { FeatureIconContainer } from './feature-icon-container';
-import { SkeletonOne } from './skeletons/first';
-import { SkeletonFour } from './skeletons/fourth';
-import { SkeletonTwo } from './skeletons/second';
-import { SkeletonThree } from './skeletons/third';
-
-
-
-
+import { StrapiImage } from '@/components/ui/strapi-image';
 
 const wordToNumber: { [key: string]: number } = {
   one: 1,
@@ -31,15 +24,15 @@ function convertWordToNumber(word: string) {
 export const Features = ({
   heading,
   sub_heading,
-  ray_card,
-  graph_card,
-  social_media_card,
+  image_card1,
+  image_card2,
+  image_card3,
 }: {
   heading: string;
   sub_heading: string;
-  ray_card: any;
-  graph_card: any;
-  social_media_card: any;
+  image_card1: any;
+  image_card2: any;
+  image_card3: any;
 }) => {
   return (
     <GradientContainer className="md:my-20">
@@ -51,42 +44,38 @@ export const Features = ({
         <Subheading className="max-w-3xl mx-auto">{sub_heading}</Subheading>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 py-10">
-          {ray_card && (
+          {image_card1 && (
             <Card
-              className={`md:col-span-${convertWordToNumber(ray_card?.span) || '1'}`}
+              className={`md:col-span-${convertWordToNumber(image_card1?.span) || '1'}`}
             >
-              <CardSkeletonContainer className="max-w-[16rem] mx-auto">
-                <SkeletonTwo />
-              </CardSkeletonContainer>
-              <CardTitle>{ray_card.title}</CardTitle>
-              <CardDescription>{ray_card.description}</CardDescription>
+              {image_card1.image && (
+                <StrapiImage
+                  src={image_card1?.image?.url}
+                  alt={`${image_card1.image?.alt}`}
+                  width={400}
+                  height={100}
+                  className="rounded-t-lg object-cover w-full h-48"
+                />
+              )}
+              <CardTitle>{image_card1.title}</CardTitle>
+              <CardDescription>{image_card1.description}</CardDescription>
             </Card>
           )}
 
-          {graph_card && (
+          {image_card2 && (
             <Card
-              className={`md:col-span-${convertWordToNumber(graph_card?.span) || '2'}`}
+              className={`md:col-span-${convertWordToNumber(image_card2?.span) || '2'}`}
             >
-              <CardSkeletonContainer
-                showGradient={false}
-                className="max-w-[16rem] mx-auto"
-              >
-                <SkeletonThree />
-              </CardSkeletonContainer>
-              <CardTitle>{graph_card.title}</CardTitle>
-              <CardDescription>{graph_card.description}</CardDescription>
+              <CardTitle>{image_card2.title}</CardTitle>
+              <CardDescription>{image_card2.description}</CardDescription>
             </Card>
           )}
-
-          {social_media_card && (
+          {image_card3 && (
             <Card
-              className={`md:col-span-${convertWordToNumber(social_media_card?.span) || '1'}`}
+              className={`md:col-span-${convertWordToNumber(image_card3?.span) || '3'}`}
             >
-              <CardSkeletonContainer showGradient={false}>
-                <SkeletonFour />
-              </CardSkeletonContainer>
-              <CardTitle>{social_media_card.title}</CardTitle>
-              <CardDescription>{social_media_card.description}</CardDescription>
+              <CardTitle>{image_card3.title}</CardTitle>
+              <CardDescription>{image_card3.description}</CardDescription>
             </Card>
           )}
         </div>

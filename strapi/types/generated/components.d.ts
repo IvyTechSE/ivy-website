@@ -1,49 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface CardsGraphCard extends Struct.ComponentSchema {
-  collectionName: 'components_cards_graph_cards';
+export interface CardsImageCard extends Struct.ComponentSchema {
+  collectionName: 'components_cards_image_cards';
   info: {
     description: '';
-    displayName: 'Graph_Card';
+    displayName: 'Image_Card';
     icon: 'dashboard';
   };
   attributes: {
     description: Schema.Attribute.String;
-    highlighted_text: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
     span: Schema.Attribute.Enumeration<['one', 'two', 'three']>;
     title: Schema.Attribute.String;
-    top_items: Schema.Attribute.Component<'items.graph-card-top-items', true>;
-  };
-}
-
-export interface CardsRayCard extends Struct.ComponentSchema {
-  collectionName: 'components_cards_ray_cards';
-  info: {
-    description: '';
-    displayName: 'Ray_Card';
-    icon: 'dashboard';
-  };
-  attributes: {
-    after_ray_items: Schema.Attribute.Component<'items.ray-items', false>;
-    before_ray_items: Schema.Attribute.Component<'items.ray-items', false>;
-    description: Schema.Attribute.String;
-    span: Schema.Attribute.Enumeration<['one', 'two', 'three']>;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface CardsSocialMediaCard extends Struct.ComponentSchema {
-  collectionName: 'components_cards_social_media_cards';
-  info: {
-    description: '';
-    displayName: 'Social_Media_Card';
-    icon: 'dashboard';
-  };
-  attributes: {
-    Description: Schema.Attribute.String;
-    logos: Schema.Attribute.Relation<'oneToMany', 'api::logo.logo'>;
-    span: Schema.Attribute.Enumeration<['one', 'two', 'three']>;
-    Title: Schema.Attribute.String;
   };
 }
 
@@ -96,13 +64,10 @@ export interface DynamicZoneFeatures extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    graph_card: Schema.Attribute.Component<'cards.graph-card', false>;
     heading: Schema.Attribute.String;
-    ray_card: Schema.Attribute.Component<'cards.ray-card', false>;
-    social_media_card: Schema.Attribute.Component<
-      'cards.social-media-card',
-      false
-    >;
+    image_card1: Schema.Attribute.Component<'cards.image-card', false>;
+    image_card2: Schema.Attribute.Component<'cards.image-card', false>;
+    image_card3: Schema.Attribute.Component<'cards.image-card', false>;
     sub_heading: Schema.Attribute.String;
   };
 }
@@ -245,18 +210,6 @@ export interface GlobalNavbar extends Struct.ComponentSchema {
   };
 }
 
-export interface ItemsGraphCardTopItems extends Struct.ComponentSchema {
-  collectionName: 'components_items_graph_card_top_items';
-  info: {
-    displayName: 'Graph_Card_Top_Items';
-    icon: 'bulletList';
-  };
-  attributes: {
-    number: Schema.Attribute.String;
-    text: Schema.Attribute.String;
-  };
-}
-
 export interface ItemsInput extends Struct.ComponentSchema {
   collectionName: 'components_items_inputs';
   info: {
@@ -307,20 +260,6 @@ export interface ItemsLeftNavbarItems extends Struct.ComponentSchema {
   attributes: {
     name: Schema.Attribute.String;
     URL: Schema.Attribute.String;
-  };
-}
-
-export interface ItemsRayItems extends Struct.ComponentSchema {
-  collectionName: 'components_items_ray_items';
-  info: {
-    description: '';
-    displayName: 'Ray_Card_Items';
-    icon: 'bulletList';
-  };
-  attributes: {
-    item_1: Schema.Attribute.String;
-    item_2: Schema.Attribute.String;
-    item_3: Schema.Attribute.String;
   };
 }
 
@@ -480,9 +419,7 @@ export interface SharedUser extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'cards.graph-card': CardsGraphCard;
-      'cards.ray-card': CardsRayCard;
-      'cards.social-media-card': CardsSocialMediaCard;
+      'cards.image-card': CardsImageCard;
       'dynamic-zone.brands': DynamicZoneBrands;
       'dynamic-zone.cta': DynamicZoneCta;
       'dynamic-zone.faq': DynamicZoneFaq;
@@ -496,10 +433,8 @@ declare module '@strapi/strapi' {
       'dynamic-zone.testimonials': DynamicZoneTestimonials;
       'global.footer': GlobalFooter;
       'global.navbar': GlobalNavbar;
-      'items.graph-card-top-items': ItemsGraphCardTopItems;
       'items.input': ItemsInput;
       'items.left-navbar-items': ItemsLeftNavbarItems;
-      'items.ray-items': ItemsRayItems;
       'shared.button': SharedButton;
       'shared.form': SharedForm;
       'shared.launches': SharedLaunches;
