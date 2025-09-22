@@ -3,9 +3,10 @@ import { ViewTransitions } from 'next-view-transitions';
 import { Inter } from 'next/font/google';
 import React from 'react';
 
+
+
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
-import { CartProvider } from '@/context/cart-context';
 import { generateMetadataObject } from '@/lib/shared/metadata';
 import fetchContentType from '@/lib/strapi/fetchContentType';
 import { cn } from '@/lib/utils';
@@ -52,18 +53,13 @@ export default async function LocaleLayout(props: {
   );
   return (
     <ViewTransitions>
-      <CartProvider>
-        <div
-          className={cn(
-            inter.className,
-            'bg-charcoal antialiased h-full w-full'
-          )}
-        >
-          <Navbar data={pageData?.navbar} locale={locale} />
-          {children}
-          <Footer data={pageData?.footer} locale={locale} />
-        </div>
-      </CartProvider>
+      <div
+        className={cn(inter.className, 'bg-charcoal antialiased h-full w-full')}
+      >
+        <Navbar data={pageData?.navbar} locale={locale} />
+        {children}
+        <Footer data={pageData?.footer} locale={locale} />
+      </div>
     </ViewTransitions>
   );
 }

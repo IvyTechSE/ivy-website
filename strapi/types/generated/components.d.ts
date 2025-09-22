@@ -211,19 +211,6 @@ export interface DynamicZoneRelatedArticles extends Struct.ComponentSchema {
   };
 }
 
-export interface DynamicZoneRelatedProducts extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_related_products';
-  info: {
-    displayName: 'Related_Products';
-    icon: 'stack';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
 export interface DynamicZoneTestimonials extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_testimonials';
   info: {
@@ -522,7 +509,6 @@ declare module '@strapi/strapi' {
       'dynamic-zone.launches': DynamicZoneLaunches;
       'dynamic-zone.pricing': DynamicZonePricing;
       'dynamic-zone.related-articles': DynamicZoneRelatedArticles;
-      'dynamic-zone.related-products': DynamicZoneRelatedProducts;
       'dynamic-zone.testimonials': DynamicZoneTestimonials;
       'global.footer': GlobalFooter;
       'global.navbar': GlobalNavbar;

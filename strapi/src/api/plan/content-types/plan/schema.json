@@ -42,12 +42,6 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.perks"
-    },
-    "product": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product.product",
-      "inversedBy": "plans"
     }
   }
 }

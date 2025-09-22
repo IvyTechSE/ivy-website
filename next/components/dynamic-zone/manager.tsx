@@ -3,6 +3,10 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
 
+
+
+
+
 interface DynamicZoneComponent {
   __component: string;
   id: number;
@@ -40,9 +44,6 @@ const componentMapping: { [key: string]: any } = {
     import('./form-next-to-section').then((mod) => mod.FormNextToSection)
   ),
   'dynamic-zone.faq': dynamic(() => import('./faq').then((mod) => mod.FAQ)),
-  'dynamic-zone.related-products': dynamic(() =>
-    import('./related-products').then((mod) => mod.RelatedProducts)
-  ),
   'dynamic-zone.related-articles': dynamic(() =>
     import('./related-articles').then((mod) => mod.RelatedArticles)
   ),

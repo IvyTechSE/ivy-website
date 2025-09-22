@@ -6,6 +6,10 @@ import { UID } from '@strapi/types';
 import { contentTypes } from '@strapi/utils';
 import pluralize from 'pluralize';
 
+
+
+
+
 interface Options {
   /**
    * Fields to select when populating relations
@@ -103,9 +107,9 @@ export default (config, { strapi }: { strapi: Core.Strapi }) => {
       ctx.query.populate = {
         // @ts-ignores
         ...getDeepPopulate(uid),
-        ...(!ctx.request.url.includes('products') && {
+        ...{
           localizations: { populate: {} },
-        }),
+        },
       };
     }
     await next();

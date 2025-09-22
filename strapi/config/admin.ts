@@ -8,10 +8,6 @@ const getPreviewPathname = (uid, { locale, document }): string | null => {
       }
       return `/${slug}`;
     }
-    case 'api::product.product':
-      return `/products/${slug}`;
-    case 'api::product-page.product-page':
-      return '/products';
     case 'api::article.article':
       return `/blog/${slug}`;
     case 'api::blog-page.blog-page':
