@@ -1,52 +1,23 @@
 'use client';
 
-import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconBrandX,
-} from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from '@tabler/icons-react';
 import Link from 'next/link';
 
+
+
 import { Button } from '../elements/button';
-import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 
 export function FormNextToSection({
   heading,
   sub_heading,
   form,
   section,
-  social_media_icon_links,
 }: {
   heading: string;
   sub_heading: string;
   form: any;
   section: any;
-  social_media_icon_links: any;
 }) {
-  const socials = [
-    {
-      title: 'twitter',
-      href: 'https://twitter.com/strapijs',
-      icon: (
-        <IconBrandX className="h-5 w-5 text-muted  hover:text-neutral-100" />
-      ),
-    },
-    {
-      title: 'github',
-      href: 'https://github.com/strapi',
-      icon: (
-        <IconBrandGithub className="h-5 w-5 text-muted  hover:text-neutral-100" />
-      ),
-    },
-    {
-      title: 'linkedin',
-      href: 'https://linkedin.com/strapi',
-      icon: (
-        <IconBrandLinkedin className="h-5 w-5 text-muted  hover:text-neutral-100" />
-      ),
-    },
-  ];
-
   return (
     <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 relative overflow-hidden">
       <div className="flex relative z-20 items-center w-full justify-center px-4 py-4 lg:py-40 sm:px-6 lg:flex-none lg:px-20  xl:px-24">
@@ -101,33 +72,23 @@ export function FormNextToSection({
               </form>
             </div>
           </div>
-          <div className="flex items-center justify-center space-x-4 py-4">
-            {socials.map((social) => (
-              <Link href={social.href} target="_blank" key={social.title}>
-                {social.icon}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
       <div className="relative w-full z-20 hidden md:flex border-l border-charcoal overflow-hidden bg-neutral-900 items-center justify-center">
         <div className="max-w-sm mx-auto">
-          <div className="flex flex-row items-center justify-center mb-10 w-full">
-            <AnimatedTooltip items={section.users} />
-          </div>
           <p
             className={
               'font-semibold text-xl text-center  text-muted text-balance'
             }
           >
-            {section.heading}
+            {section?.heading}
           </p>
           <p
             className={
               'font-normal text-base text-center text-neutral-500  mt-8 text-balance'
             }
           >
-            {section.sub_heading}
+            {section?.sub_heading}
           </p>
         </div>
       </div>
