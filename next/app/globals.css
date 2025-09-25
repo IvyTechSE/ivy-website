@@ -3,22 +3,82 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light theme (default) */
 :root {
-  --foreground-rgb: 0, 0, 0;
+  /* Brand base colors */
+  --forest: #596e5c;
+  --sand: #F1EADA;
+  --onyx: #1C1C1B;
+  --midnight: #2E333A;
+  --stone: #E2E2DE;
+  --secondary: #E6E6E6;
+
+  /* Semantic tokens - light */
+  --color-background: var(--sand);
+  --color-foreground: #1f1f1f;
+  --color-muted: #dad6cc; /* slightly darker sand variant */
+  --color-muted-foreground: #5f5a53;
+  --color-border: #d2ccbe;
+  --color-ring: var(--forest);
+  --color-primary: var(--forest);
+  --color-primary-foreground: #ffffff;
+  --color-card: #ffffff;
+  --color-card-foreground: #1f1f1f;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1f1f1f;
+  --color-accent: var(--forest);
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #b54141;
+  --color-destructive-foreground: #ffffff;
+
+  /* Shadow tokens (light) */
+  --shadow-soft: 0 1px 2px 0 rgba(0,0,0,0.06), 0 1px 3px 1px rgba(0,0,0,0.04);
+  --shadow-medium: 0 2px 4px -2px rgba(0,0,0,0.12), 0 4px 6px -1px rgba(0,0,0,0.08);
+  --shadow-inner-alt: 0px -1px 0px 0px #ffffff30 inset, 0px 1px 0px 0px #ffffff30 inset;
+  --shadow-ring: 0 0 0 1px var(--color-border);
+  --shadow-elevated: 0 6px 16px -4px rgba(0,0,0,0.15), 0 2px 4px -2px rgba(0,0,0,0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-  }
+/* Dark theme (class-based) */
+.dark {
+  --color-background: var(--onyx);
+  --color-foreground: #f3f3f3;
+  --color-muted: #2b2b2a;
+  --color-muted-foreground: #b3b3b2;
+  --color-border: #2f2f2e;
+  --color-ring: var(--forest);
+  --color-primary: var(--forest);
+  --color-primary-foreground: #ffffff;
+  --color-card: var(--midnight);
+  --color-card-foreground: #f3f3f3;
+  --color-popover: var(--midnight);
+  --color-popover-foreground: #f3f3f3;
+  --color-accent: var(--forest);
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #a94a4a;
+  --color-destructive-foreground: #ffffff;
+
+  /* Shadow tokens (dark) - softer spread, lighter inner highlights */
+  --shadow-soft: 0 1px 2px 0 rgba(0,0,0,0.4), 0 1px 3px 1px rgba(0,0,0,0.35);
+  --shadow-medium: 0 2px 4px -2px rgba(0,0,0,0.55), 0 4px 6px -1px rgba(0,0,0,0.45);
+  --shadow-inner-alt: 0px -1px 0px 0px #ffffff20 inset, 0px 1px 0px 0px #ffffff20 inset;
+  --shadow-ring: 0 0 0 1px var(--color-border);
+  --shadow-elevated: 0 8px 20px -6px rgba(0,0,0,0.65), 0 4px 8px -4px rgba(0,0,0,0.55);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  .shadow-inner-alt { box-shadow: var(--shadow-inner-alt); }
+  .shadow-ring { box-shadow: var(--shadow-ring); }
 }

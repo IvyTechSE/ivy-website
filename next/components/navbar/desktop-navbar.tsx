@@ -1,15 +1,11 @@
 'use client';
 
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-} from 'framer-motion';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { useState } from 'react';
 
 import { NavbarItem } from './navbar-item';
 import { Logo } from '@/components/logo';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -35,41 +31,31 @@ export const DesktopNavbar = ({
 }: Props) => {
   const { scrollY } = useScroll();
 
-  const [showBackground, setShowBackground] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  // Threshold after which navbar gets elevated styling
+  const THRESHOLD = 100;
   useMotionValueEvent(scrollY, 'change', (value) => {
-    if (value > 100) {
-      setShowBackground(true);
-    } else {
-      setShowBackground(false);
-    }
+    // Avoid unnecessary renders when state already matches
+    if (value > THRESHOLD && !scrolled) setScrolled(true);
+    else if (value <= THRESHOLD && scrolled) setScrolled(false);
   });
+
+  // NOTE: We intentionally avoid animating backgroundColor / boxShadow via Framer's JS animation
+  // to reduce layout + style recalcs each frame. Instead we toggle utility classes that rely on
+  // CSS transitions (GPU-friendly) for smoother performance and crisper text rendering.
   return (
-    <motion.div
+    <motion.nav
+      aria-label="Main navigation"
+      data-scrolled={scrolled}
       className={cn(
-        'w-full flex relative justify-between px-4 py-3 rounded-md  transition duration-200 bg-transparent mx-auto'
+        'w-full flex relative justify-between px-4 py-2.5 rounded-xl mx-auto transition-all duration-300',
+        'will-change-[width] select-none',
+        scrolled
+          ? 'w-[80%] bg-card/80 dark:bg-card/70 backdrop-blur-sm border border-border/60 shadow-elevated'
+          : 'w-full bg-transparent shadow-none'
       )}
-      animate={{
-        width: showBackground ? '80%' : '100%',
-        background: showBackground ? 'var(--neutral-900)' : 'transparent',
-      }}
-      transition={{
-        duration: 0.4,
-      }}
     >
-      <AnimatePresence>
-        {showBackground && (
-          <motion.div
-            key={String(showBackground)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 1,
-            }}
-            className="absolute inset-0 h-full w-full bg-neutral-900 pointer-events-none rounded-full"
-          />
-        )}
-      </AnimatePresence>
       <div className="flex flex-row gap-2 items-center">
         <Logo locale={locale} image={logo?.image} />
         <div className="flex items-center gap-1.5">
@@ -83,8 +69,8 @@ export const DesktopNavbar = ({
             </NavbarItem>
           ))}
         </div>
+        <ThemeToggle className="ml-2" />
       </div>
-
-    </motion.div>
+    </motion.nav>
   );
 };

@@ -5,6 +5,10 @@ import React from 'react';
 
 import { cn } from '@/lib/utils';
 
+
+
+
+
 interface ButtonProps {
   variant?: 'simple' | 'outline' | 'primary' | 'muted';
   as?: React.ElementType;
@@ -24,20 +28,20 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const variantClass =
     variant === 'simple'
-      ? 'bg-forest relative z-10 bg-transparent hover:border-secondary/50 hover:bg-secondary/10  border border-transparent text-sm md:text-sm transition font-medium duration-200  rounded-md px-4 py-2  flex items-center justify-center'
+      ? 'bg-transparent text-foreground hover:bg-muted/40 border border-transparent hover:border-border'
       : variant === 'outline'
-        ? 'bg-white relative z-10 hover:bg-secondary/90 hover:shadow-xl  border border-black  text-sm md:text-sm transition font-medium duration-200  rounded-md px-4 py-2  flex items-center justify-center'
+        ? 'bg-card text-foreground border border-border hover:bg-muted/60'
         : variant === 'primary'
-          ? 'bg-forest relative z-10 hover:bg-forest/90  text-sm md:text-sm transition font-medium duration-200  rounded-md px-4 py-2  flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF60_inset,_0px_1px_0px_0px_#FFFFFF60_inset'
+          ? 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-inner-alt'
           : variant === 'muted'
-            ? 'bg-neutral-800 relative z-10 hover:bg-neutral-900  border border-transparent text-sm md:text-sm transition font-medium duration-200  rounded-md px-4 py-2  flex items-center justify-center shadow-[0px_1px_0px_0px_#FFFFFF20_inset]'
+            ? 'bg-muted text-muted-foreground hover:bg-muted/70 border border-transparent'
             : '';
   const Element = Tag as any;
 
   return (
     <Element
       className={cn(
-        'bg-secondary relative z-10 bg-transparent hover:border-secondary hover:bg-secondary/50  border border-transparent text-sm md:text-sm transition font-medium duration-200  rounded-md px-4 py-2  flex items-center justify-center ',
+        'relative z-10 text-sm md:text-sm transition font-medium duration-200 rounded-md px-4 py-2 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
         variantClass,
         className
       )}
