@@ -47,13 +47,10 @@
       "components": [
         "dynamic-zone.testimonials",
         "dynamic-zone.related-articles",
-        "dynamic-zone.launches",
         "dynamic-zone.hero",
         "dynamic-zone.form-next-to-section",
         "dynamic-zone.features",
-        "dynamic-zone.faq",
-        "dynamic-zone.cta",
-        "dynamic-zone.brands"
+        "dynamic-zone.faq"
       ],
       "pluginOptions": {
         "i18n": {

@@ -27,13 +27,6 @@ const componentMapping: { [key: string]: any } = {
   'dynamic-zone.testimonials': dynamic(() =>
     import('./testimonials').then((mod) => mod.Testimonials)
   ),
-  'dynamic-zone.brands': dynamic(() =>
-    import('./brands').then((mod) => mod.Brands)
-  ),
-  'dynamic-zone.launches': dynamic(() =>
-    import('./launches').then((mod) => mod.Launches)
-  ),
-  'dynamic-zone.cta': dynamic(() => import('./cta').then((mod) => mod.CTA)),
   'dynamic-zone.form-next-to-section': dynamic(() =>
     import('./form-next-to-section').then((mod) => mod.FormNextToSection)
   ),
