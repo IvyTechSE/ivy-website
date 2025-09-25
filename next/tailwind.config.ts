@@ -18,14 +18,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: '#121212',
-        lightblack: '#1C1C1C',
         secondary: '#E6E6E6',
         muted: 'var(--neutral-200)',
         ash: '#979086',
         stone: '#E2E2DE',
         midnight: '#2E333A',
-        forest: '#5B745F',
+        forest: '#596e5c',
         onyx: '#1C1C1B',
         sand: '#F1EADA',
       },

@@ -105,20 +105,6 @@ export interface DynamicZoneHero extends Struct.ComponentSchema {
   };
 }
 
-export interface DynamicZoneHowItWorks extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_how_it_works';
-  info: {
-    description: '';
-    displayName: 'How_It_Works';
-    icon: 'question';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    steps: Schema.Attribute.Component<'shared.steps', true>;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
 export interface DynamicZoneLaunches extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_launches';
   info: {
@@ -129,20 +115,6 @@ export interface DynamicZoneLaunches extends Struct.ComponentSchema {
   attributes: {
     heading: Schema.Attribute.String;
     launches: Schema.Attribute.Component<'shared.launches', true>;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
-export interface DynamicZonePricing extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_pricings';
-  info: {
-    description: '';
-    displayName: 'Pricing';
-    icon: 'shoppingCart';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    plans: Schema.Attribute.Relation<'oneToMany', 'api::plan.plan'>;
     sub_heading: Schema.Attribute.String;
   };
 }
@@ -426,9 +398,7 @@ declare module '@strapi/strapi' {
       'dynamic-zone.features': DynamicZoneFeatures;
       'dynamic-zone.form-next-to-section': DynamicZoneFormNextToSection;
       'dynamic-zone.hero': DynamicZoneHero;
-      'dynamic-zone.how-it-works': DynamicZoneHowItWorks;
       'dynamic-zone.launches': DynamicZoneLaunches;
-      'dynamic-zone.pricing': DynamicZonePricing;
       'dynamic-zone.related-articles': DynamicZoneRelatedArticles;
       'dynamic-zone.testimonials': DynamicZoneTestimonials;
       'global.footer': GlobalFooter;
