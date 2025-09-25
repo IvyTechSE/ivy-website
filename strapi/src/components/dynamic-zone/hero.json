@@ -12,12 +12,6 @@
     },
     "sub_heading": {
       "type": "string"
-    },
-    "CTAs": {
-      "displayName": "Button",
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.button"
     }
   }
 }

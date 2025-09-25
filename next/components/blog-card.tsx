@@ -3,14 +3,12 @@ import { Link } from 'next-view-transitions';
 import React from 'react';
 import Balancer from 'react-wrap-balancer';
 
+
+
 import { BlurImage } from '@/components/blur-image';
 import { strapiImage } from '@/lib/strapi/strapiImage';
 import { truncate } from '@/lib/utils';
 import { Article } from '@/types/types';
-
-
-
-
 
 export const BlogCard = ({
   article,
@@ -45,7 +43,7 @@ export const BlogCard = ({
             {article.categories?.map((category, idx) => (
               <p
                 key={`category-${idx}`}
-                className="text-xs font-bold text-muted px-4 py-2 rounded-full bg-neutral-800 capitalize"
+                className="text-xs font-bold px-4 py-2 rounded-full bg-neutral-800 capitalize"
               >
                 {category.name}
               </p>
@@ -54,19 +52,11 @@ export const BlogCard = ({
           <p className="text-lg md:text-4xl font-bold mb-4">
             <Balancer>{article.title}</Balancer>
           </p>
-          <p className="text-left text-base md:text-xl mt-2 text-muted">
+          <p className="text-left text-base md:text-xl mt-2">
             {truncate(article.description, 500)}
           </p>
         </div>
         <div className="flex space-x-2 items-center  mt-6">
-          {/* <Image
-            src={article.authorAvatar}
-            alt={article.author}
-            width={20}
-            height={20}
-            className="rounded-full h-5 w-5"
-          /> */}
-          {/* <p className="text-sm font-normal text-muted">{article.author}</p> */}
           <div className="h-1 w-1 bg-neutral-300 rounded-full"></div>
           <p className="text-neutral-300 text-sm  max-w-xl group-hover:text-white transition duration-200">
             {format(new Date(article.publishedAt), 'MMMM dd, yyyy')}
@@ -110,7 +100,7 @@ export const BlogCardVertical = ({
             {article.categories?.map((category, idx) => (
               <p
                 key={`category-${idx}`}
-                className="text-xs font-bold text-muted px-4 py-2 rounded-full bg-neutral-800 capitalize"
+                className="text-xs font-bold px-4 py-2 rounded-full bg-neutral-800 capitalize"
               >
                 {category.name}
               </p>
@@ -119,19 +109,11 @@ export const BlogCardVertical = ({
           <p className="text-lg md:text-xl font-bold mb-4">
             <Balancer>{article.title}</Balancer>
           </p>
-          <p className="text-left text-sm md:text-base mt-2 text-muted">
+          <p className="text-left text-sm md:text-base mt-2">
             {truncate(article.description, 500)}
           </p>
         </div>
         <div className="flex space-x-2 items-center  mt-6">
-          {/* <Image
-            src={article.authorAvatar}
-            alt={article.author}
-            width={20}
-            height={20}
-            className="rounded-full h-5 w-5"
-          />
-          <p className="text-sm font-normal text-muted">{article.author}</p> */}
           <div className="h-1 w-1 bg-neutral-300 rounded-full"></div>
           <p className="text-neutral-300 text-sm  max-w-xl group-hover:text-white transition duration-200">
             {format(new Date(article.publishedAt), 'MMMM dd, yyyy')}

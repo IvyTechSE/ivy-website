@@ -27,7 +27,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <Preview />
-        <SlugProvider>{children}</SlugProvider>
+        <main >
+          <SlugProvider>{children}</SlugProvider>
+        </main>
       </body>
     </html>
   );

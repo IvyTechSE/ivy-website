@@ -1,7 +1,13 @@
 import { Link } from 'next-view-transitions';
 import React from 'react';
 
+
+
 import { Logo } from '@/components/logo';
+
+
+
+
 
 export const Footer = async ({
   data,
@@ -84,7 +90,7 @@ const LinkSection = ({
     {links.map((link) => (
       <Link
         key={link.text}
-        className="transition-colors hover:text-neutral-400 text-muted text-xs sm:text-sm"
+        className="transition-colors hover:text-neutral-400 text-xs sm:text-sm"
         href={`${link.URL.startsWith('http') ? '' : `/${locale}`}${link.URL}`}
       >
         {link.text}

@@ -78,14 +78,14 @@ export function FormNextToSection({
         <div className="max-w-sm mx-auto">
           <p
             className={
-              'font-semibold text-xl text-center  text-muted text-balance'
+              'font-semibold text-xl text-center text-balance'
             }
           >
             {section?.heading}
           </p>
           <p
             className={
-              'font-normal text-base text-center text-neutral-500  mt-8 text-balance'
+              'font-normal text-base text-center  mt-8'
             }
           >
             {section?.sub_heading}

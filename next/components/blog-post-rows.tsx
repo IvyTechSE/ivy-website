@@ -78,7 +78,7 @@ export const BlogPostRow = ({ article }: { article: Article }) => {
             {article.categories?.map((category, idx) => (
               <p
                 key={`category-${idx}`}
-                className="text-xs font-bold text-muted px-2 py-1 rounded-full bg-neutral-800 capitalize"
+                className="text-xs font-bold px-2 py-1 rounded-full bg-neutral-800 capitalize"
               >
                 {category.name}
               </p>

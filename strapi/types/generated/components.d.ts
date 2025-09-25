@@ -71,7 +71,6 @@ export interface DynamicZoneHero extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    CTAs: Schema.Attribute.Component<'shared.button', true>;
     heading: Schema.Attribute.String;
     sub_heading: Schema.Attribute.String;
   };

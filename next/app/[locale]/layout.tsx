@@ -57,7 +57,9 @@ export default async function LocaleLayout(props: {
         className={cn(inter.className, 'bg-stone dark:bg-onyx antialiased h-full w-full')}
       >
         <Navbar data={pageData?.navbar} locale={locale} />
-        {children}
+        <main className="w-full flex-auto">
+          {children}
+        </main>
         <Footer data={pageData?.footer} locale={locale} />
       </div>
     </ViewTransitions>
