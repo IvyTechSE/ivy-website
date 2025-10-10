@@ -54,10 +54,12 @@ export default async function LocaleLayout(props: {
   return (
     <ViewTransitions>
       <div
-        className={cn(inter.className, 'bg-charcoal antialiased h-full w-full')}
+        className={cn(inter.className, 'bg-background text-foreground antialiased h-full w-full')}
       >
         <Navbar data={pageData?.navbar} locale={locale} />
-        {children}
+        <main className="w-full flex-auto">
+          {children}
+        </main>
         <Footer data={pageData?.footer} locale={locale} />
       </div>
     </ViewTransitions>

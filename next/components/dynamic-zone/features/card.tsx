@@ -29,7 +29,7 @@ export const CardTitle = ({
   className?: string;
 }) => {
   return (
-    <h3 className={cn('text-lg font-semibold text-white py-2', className)}>
+    <h3 className={cn('text-lg font-semibold py-2', className)}>
       {children}
     </h3>
   );

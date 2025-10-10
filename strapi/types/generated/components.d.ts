@@ -15,34 +15,6 @@ export interface CardsImageCard extends Struct.ComponentSchema {
   };
 }
 
-export interface DynamicZoneBrands extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_brands';
-  info: {
-    description: '';
-    displayName: 'Brands';
-    icon: 'bulletList';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    logos: Schema.Attribute.Relation<'oneToMany', 'api::logo.logo'>;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
-export interface DynamicZoneCta extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_ctas';
-  info: {
-    description: '';
-    displayName: 'CTA';
-    icon: 'cursor';
-  };
-  attributes: {
-    CTAs: Schema.Attribute.Component<'shared.button', true>;
-    heading: Schema.Attribute.String;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
 export interface DynamicZoneFaq extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_faqs';
   info: {
@@ -99,50 +71,7 @@ export interface DynamicZoneHero extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    CTAs: Schema.Attribute.Component<'shared.button', true>;
     heading: Schema.Attribute.String;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
-export interface DynamicZoneHowItWorks extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_how_it_works';
-  info: {
-    description: '';
-    displayName: 'How_It_Works';
-    icon: 'question';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    steps: Schema.Attribute.Component<'shared.steps', true>;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
-export interface DynamicZoneLaunches extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_launches';
-  info: {
-    description: '';
-    displayName: 'Launches';
-    icon: 'rocket';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    launches: Schema.Attribute.Component<'shared.launches', true>;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
-export interface DynamicZonePricing extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_pricings';
-  info: {
-    description: '';
-    displayName: 'Pricing';
-    icon: 'shoppingCart';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    plans: Schema.Attribute.Relation<'oneToMany', 'api::plan.plan'>;
     sub_heading: Schema.Attribute.String;
   };
 }
@@ -295,20 +224,6 @@ export interface SharedForm extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedLaunches extends Struct.ComponentSchema {
-  collectionName: 'components_shared_launches';
-  info: {
-    description: '';
-    displayName: 'Launches';
-    icon: 'rocket';
-  };
-  attributes: {
-    description: Schema.Attribute.String;
-    mission_number: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_links';
   info: {
@@ -420,15 +335,10 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'cards.image-card': CardsImageCard;
-      'dynamic-zone.brands': DynamicZoneBrands;
-      'dynamic-zone.cta': DynamicZoneCta;
       'dynamic-zone.faq': DynamicZoneFaq;
       'dynamic-zone.features': DynamicZoneFeatures;
       'dynamic-zone.form-next-to-section': DynamicZoneFormNextToSection;
       'dynamic-zone.hero': DynamicZoneHero;
-      'dynamic-zone.how-it-works': DynamicZoneHowItWorks;
-      'dynamic-zone.launches': DynamicZoneLaunches;
-      'dynamic-zone.pricing': DynamicZonePricing;
       'dynamic-zone.related-articles': DynamicZoneRelatedArticles;
       'dynamic-zone.testimonials': DynamicZoneTestimonials;
       'global.footer': GlobalFooter;
@@ -437,7 +347,6 @@ declare module '@strapi/strapi' {
       'items.left-navbar-items': ItemsLeftNavbarItems;
       'shared.button': SharedButton;
       'shared.form': SharedForm;
-      'shared.launches': SharedLaunches;
       'shared.link': SharedLink;
       'shared.perks': SharedPerks;
       'shared.section': SharedSection;

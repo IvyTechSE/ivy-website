@@ -1,11 +1,16 @@
 import svgToDataUri from 'mini-svg-data-uri';
 import type { Config } from 'tailwindcss';
 
+
+
+
+
 const {
   default: flattenColorPalette,
 } = require('tailwindcss/lib/util/flattenColorPalette');
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -14,15 +19,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: '#08090A',
-        lightblack: '#1C1C1C',
+        // Base brand palette
         secondary: '#E6E6E6',
-        muted: 'var(--neutral-200)',
+        ash: '#979086',
+        stone: '#E2E2DE',
+        midnight: '#2E333A',
+        forest: '#596e5c',
+        onyx: '#1C1C1B',
+        sand: '#F1EADA',
+        // Semantic tokens (light/dark provided via CSS variables)
+        background: 'var(--color-background)',
+        foreground: 'var(--color-foreground)',
+        primary: 'var(--color-primary)',
+        'primary-foreground': 'var(--color-primary-foreground)',
+        muted: 'var(--color-muted)',
+        'muted-foreground': 'var(--color-muted-foreground)',
+        border: 'var(--color-border)',
+        ring: 'var(--color-ring)',
+        card: 'var(--color-card)',
+        'card-foreground': 'var(--color-card-foreground)',
+        popover: 'var(--color-popover)',
+        'popover-foreground': 'var(--color-popover-foreground)',
+        accent: 'var(--color-accent)',
+        'accent-foreground': 'var(--color-accent-foreground)',
+        destructive: 'var(--color-destructive)',
+        'destructive-foreground': 'var(--color-destructive-foreground)',
       },
       boxShadow: {
         derek: `0px 0px 0px 1px rgb(0 0 0 / 0.06),
         0px 1px 1px -0.5px rgb(0 0 0 / 0.06),
-        0px 3px 3px -1.5px rgb(0 0 0 / 0.06), 
+        0px 3px 3px -1.5px rgb(0 0 0 / 0.06),
         0px 6px 6px -3px rgb(0 0 0 / 0.06),
         0px 12px 12px -6px rgb(0 0 0 / 0.06),
         0px 24px 24px -12px rgb(0 0 0 / 0.06)`,

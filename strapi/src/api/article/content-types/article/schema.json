@@ -73,8 +73,7 @@
       },
       "type": "dynamiczone",
       "components": [
-        "dynamic-zone.related-articles",
-        "dynamic-zone.cta"
+        "dynamic-zone.related-articles"
       ]
     },
     "image": {

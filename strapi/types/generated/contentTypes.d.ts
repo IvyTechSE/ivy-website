@@ -410,7 +410,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         };
       }>;
     dynamic_zone: Schema.Attribute.DynamicZone<
-      ['dynamic-zone.related-articles', 'dynamic-zone.cta']
+      ['dynamic-zone.related-articles']
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -477,15 +477,10 @@ export interface ApiBlogPageBlogPage extends Struct.SingleTypeSchema {
       [
         'dynamic-zone.testimonials',
         'dynamic-zone.related-articles',
-        'dynamic-zone.pricing',
-        'dynamic-zone.launches',
-        'dynamic-zone.how-it-works',
         'dynamic-zone.hero',
         'dynamic-zone.form-next-to-section',
         'dynamic-zone.features',
         'dynamic-zone.faq',
-        'dynamic-zone.cta',
-        'dynamic-zone.brands',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -693,11 +688,6 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'dynamic-zone.hero',
         'dynamic-zone.features',
         'dynamic-zone.testimonials',
-        'dynamic-zone.how-it-works',
-        'dynamic-zone.brands',
-        'dynamic-zone.pricing',
-        'dynamic-zone.launches',
-        'dynamic-zone.cta',
         'dynamic-zone.form-next-to-section',
         'dynamic-zone.faq',
       ]
